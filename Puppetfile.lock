@@ -4,9 +4,34 @@ GITHUBTARBALL
     boxen (1.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-daisy_disk
+  specs:
+    daisy_disk (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-dropbox
+  specs:
+    dropbox (1.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-firefox
+  specs:
+    firefox (1.0.4)
+
+GITHUBTARBALL
   remote: boxen/puppet-gcc
   specs:
     gcc (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-geoip
+  specs:
+    geoip (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-git
@@ -14,9 +39,34 @@ GITHUBTARBALL
     git (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-gitx
+  specs:
+    gitx (1.2.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-googleearth
+  specs:
+    googleearth (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-heroku
+  specs:
+    heroku (2.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.1.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mysql
+  specs:
+    mysql (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-postgresql
+  specs:
+    postgresql (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-ruby
@@ -29,6 +79,51 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-textmate
+  specs:
+    textmate (1.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-transmission
+  specs:
+    transmission (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-virtualbox
+  specs:
+    virtualbox (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-vlc
+  specs:
+    vlc (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-watts
+  specs:
+    watts (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.0)
+
+GITHUBTARBALL
+  remote: cframe/puppet-garmin_ant_agent
+  specs:
+    garmin_ant_agent (1.0.1)
+
+GITHUBTARBALL
+  remote: cframe/puppet-google_drive
+  specs:
+    google_drive (1.0.0)
+
+GITHUBTARBALL
+  remote: cframe/puppet-trainingpeaks_device_agent
+  specs:
+    trainingpeaks_device_agent (1.0.0)
+
+GITHUBTARBALL
   remote: cprice-puppet/puppetlabs-inifile
   specs:
     inifile (0.9.0)
@@ -38,13 +133,38 @@ GITHUBTARBALL
   specs:
     stdlib (3.0.0)
 
+GITHUBTARBALL
+  remote: sheknows/puppet-sequelpro
+  specs:
+    sequelpro (1.0.0)
+
 DEPENDENCIES
   boxen (= 1.2.0)
+  chrome (= 1.0.0)
+  daisy_disk (= 1.0.0)
+  dropbox (= 1.1.0)
+  firefox (= 1.0.4)
+  garmin_ant_agent (= 1.0.1)
   gcc (= 1.0.0)
+  geoip (= 1.0.0)
   git (= 1.0.0)
+  gitx (= 1.2.0)
+  google_drive (= 1.0.0)
+  googleearth (= 1.0.0)
+  heroku (= 2.0.0)
   homebrew (= 1.1.2)
   inifile (= 0.9.0)
+  mysql (= 1.0.0)
+  postgresql (= 1.0.0)
   ruby (= 3.1.0)
+  sequelpro (= 1.0.0)
   stdlib (= 3.0.0)
   sudo (= 1.0.0)
+  textmate (= 1.1.0)
+  trainingpeaks_device_agent (= 1.0.0)
+  transmission (= 1.0.0)
+  virtualbox (= 1.0.1)
+  vlc (= 1.0.0)
+  watts (= 1.0.0)
+  wget (= 1.0.0)
 
