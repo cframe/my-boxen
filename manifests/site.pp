@@ -50,21 +50,21 @@ Homebrew::Formula <| |> -> Package <| |>
 
 node default {
   # core modules, needed for most things
-  include dnsmasq
+  # include dnsmasq
   include git
-  include hub
-  include nginx
-  include nvm
+  # include hub
+  # include nginx
+  # include nvm
 
   # fail if FDE is not enabled
-  if $::root_encrypted == 'no' {
-    fail('Please enable full disk encryption and try again')
-  }
+  # if $::root_encrypted == 'no' {
+  #   fail('Please enable full disk encryption and try again')
+  # }
 
   # node versions
-  include nodejs::0-4
-  include nodejs::0-6
-  include nodejs::0-8
+  # include nodejs::0-4
+  # include nodejs::0-6
+  # include nodejs::0-8
 
   # default ruby versions
   include ruby::1_8_7
