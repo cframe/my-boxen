@@ -85,4 +85,29 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+  
+  # custom modules
+  include firefox
+  include chrome
+  include textmate::textmate2::release
+  include vlc
+  include mysql
+  include gitx
+  include daisy_disk
+  include dropbox
+  # include appcleaner
+  # include fluid
+  include transmission
+  include wget
+  include googleearth
+  include virtualbox
+  include heroku
+  include sequelpro
+  
+  git::config::global { 'user.email':
+    value  => 'colin@colinframe.com'
+  }
+  git::config::global { 'user.name':
+    value  => 'Colin'
+  }
 }
