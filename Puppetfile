@@ -56,3 +56,5 @@ github "trainingpeaks_device_agent",  "1.0.0", :repo => "cframe/puppet-trainingp
 github "postgresql",  "1.0.0"
 github "geoip",       "1.0.0"
 github "sequelpro",   "1.0.0", :repo => "sheknows/puppet-sequelpro"
+github "spotify",     "1.0.0"
+# github "trainerroad", "1.0.2", :repo => "cframe/puppet-trainerroad"

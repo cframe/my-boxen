@@ -103,6 +103,8 @@ node default {
   include virtualbox
   include heroku
   include sequelpro
+  include spotify
+  include trainerroad
   
   git::config::global { 'user.email':
     value  => 'colin@colinframe.com'
@@ -111,3 +113,11 @@ node default {
     value  => 'Colin'
   }
 }
+
+# node 'Colins-MacBook-Pro.local' {
+#   include garmin_ant_agent
+#   include google_drive
+#   include trainingpeaks_device_agent
+#   include watts
+#   include trainerroad
+# }
