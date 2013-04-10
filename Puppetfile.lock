@@ -124,6 +124,11 @@ GITHUBTARBALL
     google_drive (1.0.0)
 
 GITHUBTARBALL
+  remote: cframe/puppet-trainerroad
+  specs:
+    trainerroad (1.0.2)
+
+GITHUBTARBALL
   remote: cframe/puppet-trainingpeaks_device_agent
   specs:
     trainingpeaks_device_agent (1.0.0)
@@ -167,6 +172,7 @@ DEPENDENCIES
   stdlib (= 3.0.0)
   sudo (= 1.0.0)
   textmate (= 1.1.0)
+  trainerroad (= 1.0.2)
   trainingpeaks_device_agent (= 1.0.0)
   transmission (= 1.0.0)
   virtualbox (= 1.0.1)
