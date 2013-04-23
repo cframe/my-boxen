@@ -104,7 +104,6 @@ node default {
   include heroku
   include sequelpro
   include spotify
-  include trainerroad
   
   git::config::global { 'user.email':
     value  => 'colin@colinframe.com'
@@ -114,10 +113,28 @@ node default {
   }
 }
 
-# node 'Colins-MacBook-Pro.local' {
-#   include garmin_ant_agent
-#   include google_drive
-#   include trainingpeaks_device_agent
-#   include watts
-#   include trainerroad
-# }
+node 'heartofgold.local' {
+  include git
+  
+  osx::recovery_message { 'If this Mac is found, please call 07980241415': }
+  include garmin_ant_agent
+  include google_drive
+  include trainingpeaks_device_agent
+  include watts
+  include trainerroad
+}
+
+node 'marvin.local' {
+  include github
+  
+  include virtualbox
+  include android::sdk
+  include android::platform_tools
+  include android::10
+  include android::15
+  include android::16
+  include android::17
+  android::version { '17':
+    options => ['platform', 'add_on', 'system_image'] 
+  }
+}
