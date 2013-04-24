@@ -137,4 +137,10 @@ node 'marvin.local' {
   android::version { '17':
     options => ['platform', 'add_on', 'system_image'] 
   }
+  include induction
+  include google_notifier
+  include skitch
+  include imagemagick
+  include wget
+  include wkhtmltopdf
 }
