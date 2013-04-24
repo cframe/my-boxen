@@ -128,15 +128,27 @@ node 'marvin.local' {
   include github
   
   include virtualbox
+  
   include android::sdk
   include android::platform_tools
   include android::10
   include android::15
   include android::16
   include android::17
+  android::version { '10':
+    options => ['platform', 'add_on', 'system_image'] 
+  }
+  android::version { '15':
+    options => ['platform', 'add_on', 'system_image'] 
+  }
+  android::version { '16':
+    options => ['platform', 'add_on', 'system_image'] 
+  }
   android::version { '17':
     options => ['platform', 'add_on', 'system_image'] 
   }
+  android::extra { 'extra-intel-intel_hardware_accelerated_execution_manager': }
+  
   include induction
   include google_notifier
   include skitch
