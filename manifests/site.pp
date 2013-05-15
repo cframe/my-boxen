@@ -57,9 +57,9 @@ node default {
   # include nvm
 
   # fail if FDE is not enabled
-  # if $::root_encrypted == 'no' {
-  #   fail('Please enable full disk encryption and try again')
-  # }
+  if $::root_encrypted == 'no' {
+    fail('Please enable full disk encryption and try again')
+  }
 
   # node versions
   # include nodejs::0-4
@@ -105,6 +105,11 @@ node default {
   include sequelpro
   include spotify
   
+  include osx::global::enable_keyboard_control_access
+  include osx::dock::dim_hidden_apps
+  include osx::finder::show_all_on_desktop
+  include osx::no_network_dsstores
+  
   git::config::global { 'user.email':
     value  => 'colin@colinframe.com'
   }
@@ -122,6 +127,8 @@ node 'heartofgold.local' {
   include trainingpeaks_device_agent
   include watts
   include trainerroad
+  
+  include projects::office
 }
 
 node 'marvin.local' {
@@ -155,4 +162,6 @@ node 'marvin.local' {
   include imagemagick
   include wget
   include wkhtmltopdf
+  
+  include projects::office
 }
