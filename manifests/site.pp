@@ -133,6 +133,7 @@ node 'heartofgold.local' {
   include trainingpeaks_device_agent
   include watts
   include trainerroad
+  include flux
   
   include projects::office
   include projects::itison

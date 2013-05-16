@@ -29,6 +29,11 @@ GITHUBTARBALL
     firefox (1.0.4)
 
 GITHUBTARBALL
+  remote: boxen/puppet-flux
+  specs:
+    flux (0.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-gcc
   specs:
     gcc (1.0.0)
@@ -154,6 +159,11 @@ GITHUBTARBALL
     wkhtmltopdf (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-xquartz
+  specs:
+    xquartz (1.1.0)
+
+GITHUBTARBALL
   remote: cframe/puppet-garmin_ant_agent
   specs:
     garmin_ant_agent (1.0.1)
@@ -195,6 +205,7 @@ DEPENDENCIES
   daisy_disk (= 1.0.0)
   dropbox (= 1.1.0)
   firefox (= 1.0.4)
+  flux (= 0.0.1)
   garmin_ant_agent (= 1.0.1)
   gcc (= 1.0.0)
   geoip (= 1.0.0)
@@ -229,4 +240,5 @@ DEPENDENCIES
   wget (= 1.0.0)
   wget (= 1.0.0)
   wkhtmltopdf (= 1.0.0)
+  xquartz (= 1.1.0)
 

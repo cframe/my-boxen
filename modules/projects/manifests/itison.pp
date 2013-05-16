@@ -1,6 +1,6 @@
 class projects::itison {
   include wkhtmltopdf
-  # include imagemagick
+  include imagemagick
   include geoip
   
   $home = "/Users/${::luser}"
