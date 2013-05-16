@@ -116,6 +116,12 @@ node default {
   git::config::global { 'user.name':
     value  => 'Colin'
   }
+  
+  file { '/tmp/mysql.sock':
+    ensure => link,
+    target => '/opt/boxen/data/mysql/socket',
+  }
+  
 }
 
 node 'heartofgold.local' {
@@ -129,6 +135,7 @@ node 'heartofgold.local' {
   include trainerroad
   
   include projects::office
+  include projects::itison
 }
 
 node 'marvin.local' {
@@ -158,10 +165,9 @@ node 'marvin.local' {
   
   include induction
   include google_notifier
-  include skitch
-  include imagemagick
+  include skitch  
   include wget
-  include wkhtmltopdf
   
   include projects::office
+  include projects::itison
 }

@@ -8,8 +8,4 @@ class projects::office {
     source        => 'dadaevents/itison-office'
   }
   
-  file { '/tmp/mysql.sock':
-    ensure => link,
-    target => '/opt/boxen/data/mysql/socket',
-  }
 }

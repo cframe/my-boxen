@@ -198,6 +198,7 @@ DEPENDENCIES
   garmin_ant_agent (= 1.0.1)
   gcc (= 1.0.0)
   geoip (= 1.0.0)
+  geoip (= 1.0.0)
   git (= 1.0.0)
   gitx (= 1.2.0)
   google_drive (= 1.0.0)
