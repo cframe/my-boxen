@@ -104,6 +104,7 @@ node default {
   include heroku
   include sequelpro
   include spotify
+  include libreoffice
   
   include osx::global::enable_keyboard_control_access
   include osx::dock::dim_hidden_apps
@@ -124,9 +125,7 @@ node default {
   
 }
 
-node 'heartofgold.local' {
-  include git
-  
+node 'heartofgold.local' inherits default {  
   osx::recovery_message { 'If this Mac is found, please call 07980241415': }
   include garmin_ant_agent
   include google_drive
@@ -139,7 +138,7 @@ node 'heartofgold.local' {
   include projects::itison
 }
 
-node 'marvin.local' {
+node 'marvin.local' inherits default {
   include github
   
   include virtualbox

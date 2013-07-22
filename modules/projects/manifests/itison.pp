@@ -1,5 +1,6 @@
 class projects::itison {
   include wkhtmltopdf
+  include libtool
   include imagemagick
   include geoip
   
