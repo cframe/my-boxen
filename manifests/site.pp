@@ -5,7 +5,7 @@ require gcc
 Exec {
   group       => 'staff',
   logoutput   => on_failure,
-  user        => $luser,
+  user        => $boxen_user,
 
   path => [
     "${boxen::config::home}/rbenv/shims",
@@ -20,13 +20,13 @@ Exec {
 
   environment => [
     "HOMEBREW_CACHE=${homebrew::config::cachedir}",
-    "HOME=/Users/${::luser}"
+    "HOME=/Users/${::boxen_user}"
   ]
 }
 
 File {
   group => 'staff',
-  owner => $luser
+  owner => $boxen_user
 }
 
 Package {
@@ -39,7 +39,10 @@ Repository {
   extra    => [
     '--recurse-submodules'
   ],
-  require  => Class['git']
+  require  => File["${boxen::config::bindir}/boxen-git-credential"],
+  config   => {
+    'credential.helper' => "${boxen::config::bindir}/boxen-git-credential"
+  }
 }
 
 Service {
@@ -54,7 +57,6 @@ node default {
   include git
   # include hub
   # include nginx
-  # include nvm
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -147,18 +149,6 @@ node 'marvin.local' inherits default {
   include android::15
   include android::16
   include android::17
-  android::version { '10':
-    options => ['platform', 'add_on', 'system_image'] 
-  }
-  android::version { '15':
-    options => ['platform', 'add_on', 'system_image'] 
-  }
-  android::version { '16':
-    options => ['platform', 'add_on', 'system_image'] 
-  }
-  android::version { '17':
-    options => ['platform', 'add_on', 'system_image'] 
-  }
   android::extra { 'extra-intel-intel_hardware_accelerated_execution_manager': }
   
   include induction
