@@ -102,7 +102,7 @@ node default {
   include googleearth
   include virtualbox
   include heroku
-  include sequelpro
+  include sequel_pro
   include spotify
   include libreoffice
   
@@ -138,9 +138,7 @@ node 'heartofgold.local' inherits default {
   include projects::itison
 }
 
-node 'marvin.local' inherits default {
-  include github
-  
+node 'marvin.local' inherits default {  
   include virtualbox
   
   include android::sdk
