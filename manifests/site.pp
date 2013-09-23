@@ -106,7 +106,7 @@ node default {
   include heroku
   include sequel_pro
   include spotify
-  include libreoffice
+  include openoffice
   
   include osx::global::enable_keyboard_control_access
   include osx::dock::dim_hidden_apps
