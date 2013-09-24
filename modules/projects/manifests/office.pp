@@ -1,5 +1,5 @@
 class projects::office {
-  $home = "/Users/${::luser}"
+  $home = "/Users/${::boxen_user}"
   
   boxen::project { 'office':
     dir           => "${home}/Projects/office", 

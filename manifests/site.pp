@@ -95,7 +95,7 @@ node default {
   include vlc
   include mysql
   include gitx
-  include daisy_disk
+  # include daisy_disk
   include dropbox
   # include appcleaner
   # include fluid
@@ -112,6 +112,13 @@ node default {
   include osx::dock::dim_hidden_apps
   include osx::finder::show_all_on_desktop
   include osx::no_network_dsstores
+  include osx::global::key_repeat_rate  
+  class { 'osx::dock::icon_size': 
+    size => 36
+  }
+  class { 'osx::global::key_repeat_delay':
+    delay => 10
+  }
   
   git::config::global { 'user.email':
     value  => 'colin@colinframe.com'
