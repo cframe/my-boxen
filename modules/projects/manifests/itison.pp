@@ -1,6 +1,6 @@
 class projects::itison {
   include qt
-  # include wkhtmltopdf
+  include wkhtmltopdf
   include libtool
   include imagemagick
   include geoip
