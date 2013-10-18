@@ -174,4 +174,5 @@ node 'marvin.local' inherits default {
   
   include projects::office
   include projects::itison
+  include projects::hub
 }

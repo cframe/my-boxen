@@ -1,12 +1,12 @@
 class projects::itison {
+  $home = "/Users/${::boxen_user}"
+  
   include qt
   include wkhtmltopdf
   include libtool
   include imagemagick
   include geoip
   include ruby::ree_1_8_7_2012_02
-  
-  $home = "/Users/${::boxen_user}"
   
   boxen::project { 'itison':
     dir           => "${home}/Projects/itison", 
