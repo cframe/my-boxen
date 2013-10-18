@@ -170,6 +170,7 @@ node 'marvin.local' inherits default {
   include google_notifier
   include skitch  
   include wget
+  include caffeine
   
   include projects::office
   include projects::itison
