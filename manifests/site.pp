@@ -51,6 +51,58 @@ Service {
 
 Homebrew::Formula <| |> -> Package <| |>
 
+class osx::dock::align_left {
+  include osx::dock
+
+  boxen::osx_defaults { 'Align the Dock to the left':
+    user   => $::boxen_user,
+    key    => 'orientation',
+    domain => 'com.apple.dock',
+    value  => 'left',
+    notify => Exec['killall Dock'];
+  }
+}
+
+class osx::dock::top_right_hot_corner_screensaver {
+  include osx::dock
+  
+  boxen::osx_defaults { 'Set the top right hot corner to activate the screensaver':
+    user   => $::boxen_user,
+    key    => 'wvous-tr-corner',
+    domain => 'com.apple.dock',
+    type   => 'int', 
+    value  => 5,
+    notify => Exec['killall Dock'];
+  }
+}
+
+class osx::dock::top_right_hot_corner_screensaver_modifier {
+  include osx::dock
+  
+  boxen::osx_defaults { 'Set the top right hot corner to activate the screensaver':
+    user   => $::boxen_user,
+    key    => 'wvous-tr-modifier',
+    domain => 'com.apple.dock',
+    type   => 'int',
+    value  => 0,
+    notify => Exec['killall Dock'];
+  }
+}
+
+class osx::dock::zoom_icon_size($size = 36) {
+  include osx::dock
+
+  boxen::osx_defaults { 'zoom icon size':
+    domain => 'com.apple.dock',
+    key    => 'largesize',
+    type   => 'int',
+    value  => $size,
+    user   => $::boxen_user,
+    notify => Exec['killall Dock'];
+  }
+}
+
+
 node default {
   # core modules, needed for most things
   # include dnsmasq
@@ -114,30 +166,30 @@ node default {
   include osx::no_network_dsstores
   include osx::global::key_repeat_rate  
   class { 'osx::dock::icon_size': 
-    size => 36
+    size => 31
+  }
+  class { 'osx::dock::zoom_icon_size': 
+    size => 46
   }
   class { 'osx::global::key_repeat_delay':
     delay => 10
   }
+  include osx::dock::align_left
+  include osx::dock::top_right_hot_corner_screensaver
   
   git::config::global { 'user.email':
     value  => 'colin@colinframe.com'
   }
   git::config::global { 'user.name':
     value  => 'Colin'
-  }
-  
-  file { '/tmp/mysql.sock':
-    ensure => link,
-    target => '/opt/boxen/data/mysql/socket',
-  }
-  
+  }  
+
 }
 
 node 'heartofgold.local' inherits default {  
   osx::recovery_message { 'If this Mac is found, please call 07980241415': }
   include garmin_ant_agent
-  include google_drive
+  include googledrive
   include trainingpeaks_device_agent
   include watts
   include trainerroad
@@ -147,8 +199,19 @@ node 'heartofgold.local' inherits default {
   include projects::itison
 }
 
-node 'marvin.local' inherits default {  
+class virtualbox::ievms {
   include virtualbox
+
+  exec { 'Install ievms':
+    command  => "/usr/bin/curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh",
+    require => Class['virtualbox'],
+  }
+}
+
+node 'marvin.local' inherits default {
+  include osx::dock::clear_dock
+  
+  include virtualbox::ievms
   
   include android::sdk
   include android::platform_tools
@@ -172,7 +235,46 @@ node 'marvin.local' inherits default {
   include wget
   include caffeine
   
+  include dockutil
+  dockutil::item { 'Add Chrome':
+    item     => "/Applications/Google Chrome.app",
+    label    => "Google Chrome",
+    action   => "add",
+    position => 1,
+  }
+  dockutil::item { 'Add Mail':
+    item     => "/Applications/Mail.app",
+    label    => "Mail",
+    action   => "add",
+    position => 2,
+  }
+  dockutil::item { 'Add Messages':
+    item     => "/Applications/Messages.app",
+    label    => "Messages",
+    action   => "add",
+    position => 3,
+  }
+  dockutil::item { 'Add iTunes':
+    item     => "/Applications/iTunes.app",
+    label    => "iTunes",
+    action   => "add",
+    position => 4,
+  }
+  dockutil::item { 'Add Terminal':
+    item     => "/Applications/Utilities/Terminal.app",
+    label    => "Terminal",
+    action   => "add",
+    position => 5,
+  }
+  dockutil::item { 'Add TextMate':
+    item     => "/Applications/TextMate.app",
+    label    => "TextMate",
+    action   => "add",
+    position => 6,
+  }
+  
   include projects::office
   include projects::itison
   include projects::hub
+  
 }

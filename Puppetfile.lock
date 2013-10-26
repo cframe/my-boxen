@@ -29,6 +29,11 @@ GITHUBTARBALL
     daisy_disk (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-dockutil
+  specs:
+    dockutil (0.1.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-dropbox
   specs:
     dropbox (1.1.0)
@@ -67,6 +72,11 @@ GITHUBTARBALL
   remote: boxen/puppet-google_notifier
   specs:
     google_notifier (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-googledrive
+  specs:
+    googledrive (1.0.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-googleearth
@@ -214,11 +224,6 @@ GITHUBTARBALL
     garmin_ant_agent (1.0.1)
 
 GITHUBTARBALL
-  remote: cframe/puppet-google_drive
-  specs:
-    google_drive (1.0.0)
-
-GITHUBTARBALL
   remote: cframe/puppet-trainerroad
   specs:
     trainerroad (1.0.2)
@@ -245,6 +250,7 @@ DEPENDENCIES
   caffeine (= 1.0.0)
   chrome (= 1.0.0)
   daisy_disk (= 1.0.0)
+  dockutil (= 0.1.2)
   dropbox (= 1.1.0)
   firefox (= 1.0.4)
   flux (= 0.0.1)
@@ -253,8 +259,8 @@ DEPENDENCIES
   geoip (= 1.0.0)
   git (= 1.2.5)
   gitx (= 1.2.0)
-  google_drive (= 1.0.0)
   google_notifier (= 1.0.1)
+  googledrive (= 1.0.2)
   googleearth (= 1.0.0)
   heroku (= 2.0.0)
   homebrew (= 1.4.1)
