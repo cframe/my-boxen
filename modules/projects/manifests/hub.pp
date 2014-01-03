@@ -3,12 +3,12 @@ class projects::hub {
   
   include qt
   include wkhtmltopdf
-  include ruby::1_9_2_p290
+  include ruby::1_9_3_p484
   
   boxen::project { 'hub':
     dir           => "${home}/Projects/hub", 
     mysql         => true,
-    ruby          => '1.9.2-p290',
+    ruby          => '1.9.3-p484',
     source        => 'dadaevents/itison-hub'
   }
   

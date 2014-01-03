@@ -101,7 +101,13 @@ class osx::dock::zoom_icon_size($size = 36) {
     notify => Exec['killall Dock'];
   }
 }
-
+class osx::disable_dashboard {
+  boxen::osx_defaults { 'Disable Dashboard':
+    key    => 'mcx-disabled',
+    domain => 'com.apple.dashboard',
+    value  => 'YES',
+  }
+}
 
 node default {
   # core modules, needed for most things
@@ -121,8 +127,7 @@ node default {
   # include nodejs::0-8
 
   # default ruby versions
-  include ruby::1_8_7
-  include ruby::1_9_2
+  # include ruby::1_8_7
   include ruby::1_9_3
   include ruby::2_0_0
 
@@ -165,6 +170,7 @@ node default {
   include osx::finder::show_all_on_desktop
   include osx::no_network_dsstores
   include osx::global::key_repeat_rate  
+  include osx::disable_dashboard
   class { 'osx::dock::icon_size': 
     size => 31
   }
