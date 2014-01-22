@@ -1,8 +1,6 @@
 class projects::mymunros {
   $home = "/Users/${::boxen_user}"
   
-  include ruby::2_0_0_p247
-  
   boxen::project { 'mymunros':
     dir           => "${home}/Projects/mymunros", 
     mysql         => true,

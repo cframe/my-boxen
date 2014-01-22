@@ -127,10 +127,9 @@ node default {
   # include nodejs::0-8
 
   # default ruby versions
-  # include ruby::1_8_7
-  include ruby::1_9_3
-  include ruby::2_0_0
-
+  ruby::version { '1.9.3-p484': }
+  ruby::version { '2.0.0-p247': }
+  
   # common, useful packages
   package {
     [
@@ -197,7 +196,6 @@ node 'heartofgold.local' inherits default {
   include garmin_ant_agent
   include googledrive
   include trainingpeaks_device_agent
-  include watts
   include trainerroad
   include flux
   
@@ -222,16 +220,16 @@ node 'marvin.local' inherits default {
   include android::sdk
   include android::platform_tools
   android::version { '10':
-    options => ['platform', 'system_image'] 
+    options => ['platform', 'system_image']
   }
   android::version { '15':
-    options => ['platform', 'system_image'] 
+    options => ['platform', 'system_image']
   }
   android::version { '16':
-    options => ['platform', 'system_image'] 
+    options => ['platform', 'system_image']
   }
   android::version { '17':
-    options => ['platform', 'system_image'] 
+    options => ['platform', 'system_image']
   }
   android::extra { 'extras-intel-Hardware_Accelerated_Execution_Manager': }
   
