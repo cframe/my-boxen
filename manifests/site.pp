@@ -219,19 +219,25 @@ node 'marvin.local' inherits default {
   include virtualbox::ievms
   
   include android::sdk
+  include android::tools
   include android::platform_tools
-  android::version { '10':
-    options => ['platform', 'system_image']
-  }
-  android::version { '15':
-    options => ['platform', 'system_image']
-  }
-  android::version { '16':
-    options => ['platform', 'system_image']
-  }
-  android::version { '17':
-    options => ['platform', 'system_image']
-  }
+  include android::10
+  include android::15
+  include android::16
+  include android::17
+  include android::18
+  # android::version { '10':
+  #   options => ['platform', 'system_image']
+  # }
+  # android::version { '15':
+  #   options => ['platform', 'system_image']
+  # }
+  # android::version { '16':
+  #   options => ['platform', 'system_image']
+  # }
+  # android::version { '17':
+  #   options => ['platform', 'system_image']
+  # }
   android::extra { 'extras-intel-Hardware_Accelerated_Execution_Manager': }
   
   include induction
