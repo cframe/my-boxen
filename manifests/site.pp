@@ -163,6 +163,7 @@ node default {
   include sequel_pro
   include spotify
   include openoffice
+  include unarchiver
   
   include osx::global::enable_keyboard_control_access
   include osx::dock::dim_hidden_apps
@@ -238,6 +239,7 @@ node 'marvin.local' inherits default {
   include skitch  
   include wget
   include caffeine
+  include alfred
   
   include dockutil
   dockutil::item { 'Add Chrome':
