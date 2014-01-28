@@ -164,6 +164,7 @@ node default {
   include spotify
   include openoffice
   include unarchiver
+  include ios7_screensaver
   
   include osx::global::enable_keyboard_control_access
   include osx::dock::dim_hidden_apps
@@ -246,6 +247,7 @@ node 'marvin.local' inherits default {
   include wget
   include caffeine
   include alfred
+  include hipchat
   
   include dockutil
   dockutil::item { 'Add Chrome':
