@@ -165,6 +165,7 @@ node default {
   include openoffice
   include unarchiver
   include ios7_screensaver
+  include plistfiles
   
   include osx::global::enable_keyboard_control_access
   include osx::dock::dim_hidden_apps
