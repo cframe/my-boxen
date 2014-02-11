@@ -1,6 +1,9 @@
 class projects::hub {
   $home = "/Users/${::boxen_user}"
   
+	include libtool
+  include imagemagick
+  
   boxen::project { 'hub':
     dir           => "${home}/Projects/hub", 
     mysql         => true,
