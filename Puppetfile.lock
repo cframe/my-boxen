@@ -101,7 +101,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
-    homebrew (1.5.1)
+    homebrew (1.6.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-imagemagick
@@ -260,7 +260,7 @@ DEPENDENCIES
   googleearth (= 1.0.0)
   heroku (= 2.1.1)
   hipchat (= 1.1.0)
-  homebrew (= 1.5.1)
+  homebrew (= 1.6.2)
   imagemagick (= 1.2.1)
   induction (= 1.0.0)
   inifile (= 1.0.0)

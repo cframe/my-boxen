@@ -138,6 +138,14 @@ node default {
       'gnu-tar'
     ]:
   }
+  
+  package { 'makedepend':
+    ensure => present
+  }
+  package { 'openssl':
+    ensure => '1.0.1g',
+    require => Package['makedepend']
+  }
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
@@ -202,94 +210,6 @@ node 'heartofgold.local' inherits default {
   include trainerroad
   include flux
   
-  include projects::office
-  include projects::itison
-}
-
-class virtualbox::ievms {
-  include virtualbox
-
-  exec { 'Install ievms':
-    command  => "/usr/bin/curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh",
-    require => Class['virtualbox'],
-  }
-}
-
-node 'marvin.local' inherits default {
-  include osx::dock::clear_dock
-  
-  include virtualbox::ievms
-  
-  include android::sdk
-  include android::tools
-  include android::platform_tools
-  include android::10
-  include android::15
-  include android::16
-  include android::17
-  include android::18
-  # android::version { '10':
-  #   options => ['platform', 'system_image']
-  # }
-  # android::version { '15':
-  #   options => ['platform', 'system_image']
-  # }
-  # android::version { '16':
-  #   options => ['platform', 'system_image']
-  # }
-  # android::version { '17':
-  #   options => ['platform', 'system_image']
-  # }
-  android::extra { 'extras-intel-Hardware_Accelerated_Execution_Manager': }
-  
-  include induction
-  include google_notifier
-  include skitch  
-  include wget
-  include caffeine
-  include alfred
-  include hipchat
-  
-  include dockutil
-  dockutil::item { 'Add Chrome':
-    item     => "/Applications/Google Chrome.app",
-    label    => "Google Chrome",
-    action   => "add",
-    position => 1,
-  }
-  dockutil::item { 'Add Mail':
-    item     => "/Applications/Mail.app",
-    label    => "Mail",
-    action   => "add",
-    position => 2,
-  }
-  dockutil::item { 'Add Messages':
-    item     => "/Applications/Messages.app",
-    label    => "Messages",
-    action   => "add",
-    position => 3,
-  }
-  dockutil::item { 'Add iTunes':
-    item     => "/Applications/iTunes.app",
-    label    => "iTunes",
-    action   => "add",
-    position => 4,
-  }
-  dockutil::item { 'Add Terminal':
-    item     => "/Applications/Utilities/Terminal.app",
-    label    => "Terminal",
-    action   => "add",
-    position => 5,
-  }
-  dockutil::item { 'Add TextMate':
-    item     => "/Applications/TextMate.app",
-    label    => "TextMate",
-    action   => "add",
-    position => 6,
-  }
-  
-  include projects::office
-  include projects::itison
-  include projects::hub
-  
+  # include projects::office
+  # include projects::itison
 }
