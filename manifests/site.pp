@@ -101,6 +101,7 @@ class osx::dock::zoom_icon_size($size = 36) {
     notify => Exec['killall Dock'];
   }
 }
+
 class osx::disable_dashboard {
   boxen::osx_defaults { 'Disable Dashboard':
     key    => 'mcx-disabled',
@@ -122,14 +123,17 @@ node default {
   }
 
   # node versions
-  # include nodejs::0-4
-  # include nodejs::0-6
-  # include nodejs::0-8
+  # nodejs::version { 'v0.6': }
+  # nodejs::version { 'v0.8': }
+  # nodejs::version { 'v0.10': }
 
   # default ruby versions
   ruby::version { '1.9.3-p484': }
   ruby::version { '2.0.0-p247': }
-  
+  # ruby::version { '2.1.0': }
+  # ruby::version { '2.1.1': }
+  # ruby::version { '2.1.2': }
+
   # common, useful packages
   package {
     [
@@ -138,78 +142,9 @@ node default {
       'gnu-tar'
     ]:
   }
-  
-  package { 'makedepend':
-    ensure => present
-  }
-  package { 'openssl':
-    ensure => '1.0.1g',
-    require => Package['makedepend']
-  }
 
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
   }
-  
-  # custom modules
-  include firefox
-  include chrome
-  include textmate::textmate2::release
-  include vlc
-  include mysql
-  include gitx
-  # include daisy_disk
-  include dropbox
-  # include appcleaner
-  # include fluid
-  include transmission
-  include wget
-  include googleearth
-  include virtualbox
-  include heroku
-  include sequel_pro
-  include spotify
-  include openoffice
-  include unarchiver
-  include ios7_screensaver
-  include plistfiles
-  
-  include osx::global::enable_keyboard_control_access
-  include osx::dock::dim_hidden_apps
-  include osx::finder::show_all_on_desktop
-  include osx::no_network_dsstores
-  include osx::global::key_repeat_rate  
-  include osx::disable_dashboard
-  class { 'osx::dock::icon_size': 
-    size => 31
-  }
-  class { 'osx::dock::zoom_icon_size': 
-    size => 46
-  }
-  class { 'osx::global::key_repeat_delay':
-    delay => 10
-  }
-  include osx::dock::align_left
-  include osx::dock::top_right_hot_corner_screensaver
-  
-  git::config::global { 'user.email':
-    value  => 'colin@colinframe.com'
-  }
-  git::config::global { 'user.name':
-    value  => 'Colin'
-  }  
-
-}
-
-node 'heartofgold.local' inherits default {  
-  osx::recovery_message { 'If this Mac is found, please call 07980241415': }
-  include garmin_ant_agent
-  include googledrive
-  include trainingpeaks_device_agent
-  include trainerroad
-  include flux
-  
-  # include projects::office
-  # include projects::itison
 }
