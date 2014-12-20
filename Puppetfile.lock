@@ -224,21 +224,6 @@ GITHUBTARBALL
     xquartz (1.2.1)
 
 GITHUBTARBALL
-  remote: cframe/puppet-garmin_ant_agent
-  specs:
-    garmin_ant_agent (1.0.1)
-
-GITHUBTARBALL
-  remote: cframe/puppet-trainerroad
-  specs:
-    trainerroad (1.0.2)
-
-GITHUBTARBALL
-  remote: cframe/puppet-trainingpeaks_device_agent
-  specs:
-    trainingpeaks_device_agent (1.0.0)
-
-GITHUBTARBALL
   remote: dieterdemeyer/puppet-unarchiver
   specs:
     unarchiver (1.3.0)
@@ -270,7 +255,6 @@ DEPENDENCIES
   firefox (= 1.0.4)
   flux (= 0.0.1)
   foreman (= 1.2.0)
-  garmin_ant_agent (= 1.0.1)
   gcc (= 2.2.0)
   geoip (= 1.0.0)
   git (= 2.7.1)
@@ -303,8 +287,6 @@ DEPENDENCIES
   stdlib (= 4.2.1)
   sudo (= 1.0.0)
   textmate (= 1.1.0)
-  trainerroad (= 1.0.2)
-  trainingpeaks_device_agent (= 1.0.0)
   transmission (= 1.0.0)
   unarchiver (= 1.3.0)
   virtualbox (= 1.0.10)

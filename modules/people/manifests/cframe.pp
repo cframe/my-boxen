@@ -49,10 +49,9 @@ class people::cframe {
 
 
   osx::recovery_message { 'If this Mac is found, please call 07980241415': }
-  include garmin_ant_agent
+  include garmin_express
   include googledrive
-  include trainingpeaks_device_agent
-  include trainerroad
+  include trainer_road
   include flux
 
   # include projects::office
