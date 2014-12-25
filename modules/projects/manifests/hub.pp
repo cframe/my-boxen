@@ -4,7 +4,7 @@ class projects::hub {
 	include libtool
   include imagemagick
   
-  git::config::local { 'colin.frame@itison.com itison':
+  git::config::local { 'colin.frame@itison.com hub':
     ensure => present,
     repo   => "${home}/Projects/hub",
     key    => 'user.email',

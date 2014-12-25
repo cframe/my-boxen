@@ -45,8 +45,7 @@ class people::cframe {
   }
   git::config::global { 'user.name':
     value  => 'Colin'
-  }  
-
+  }
 
   osx::recovery_message { 'If this Mac is found, please call 07980241415': }
   include garmin_express
@@ -54,6 +53,13 @@ class people::cframe {
   include trainer_road
   include flux
 
+  include open_emu
+  include duet
+  include boxer
+
+  include projects::mymunros
+
   # include projects::office
   # include projects::itison
+  # include projects::hub
 }
