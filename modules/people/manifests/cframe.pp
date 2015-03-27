@@ -1,4 +1,4 @@
-class people::cframe {
+class people::cframe {  
   # custom modules
   include firefox
   include chrome
@@ -58,6 +58,8 @@ class people::cframe {
   include boxer
 
   include projects::mymunros
+  # include projects::bagger
+  include projects::percentify
 
   # include projects::office
   # include projects::itison

@@ -1,0 +1,11 @@
+---
+ruby::build::ensure: 'v20150226'
+
+ruby::version:
+  - 1.9.3-p484
+  - 2.0.0-p598
+  - 2.0.0-p643
+  
+ruby::version::alias: 
+  1.9.3: 1.9.3-p484
+  2.0.0: 2.0.0-p643
