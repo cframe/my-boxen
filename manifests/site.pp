@@ -132,6 +132,7 @@ node default {
   ruby::version { '2.0.0-p247': }
   ruby::version { '2.0.0-p598': }
   ruby::version { '2.0.0-p643': }
+  ruby::version { '2.2.1': }
   
   # ruby::version { '2.1.0': }
   # ruby::version { '2.1.1': }

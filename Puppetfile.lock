@@ -136,7 +136,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-mysql
   specs:
-    mysql (1.2.0)
+    mysql (2.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-openoffice
@@ -278,7 +278,7 @@ DEPENDENCIES
   java (= 1.2.0)
   libtool (= 1.0.0)
   module_data (= 0.0.3)
-  mysql (= 1.2.0)
+  mysql (= 2.0.1)
   openoffice (= 1.2.0)
   openssl (= 1.0.0)
   osx (= 2.2.2)

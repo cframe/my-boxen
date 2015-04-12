@@ -1,10 +1,11 @@
 ---
-ruby::build::ensure: 'v20150226'
+ruby::build::ensure: 'v20150319zf'
 
 ruby::version:
   - 1.9.3-p484
   - 2.0.0-p598
   - 2.0.0-p643
+  - 2.2.1
   
 ruby::version::alias: 
   1.9.3: 1.9.3-p484
