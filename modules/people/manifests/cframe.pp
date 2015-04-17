@@ -61,7 +61,7 @@ class people::cframe {
   # include projects::bagger
   include projects::percentify
 
-  # include projects::office
+  include projects::office
   # include projects::itison
   # include projects::hub
 }

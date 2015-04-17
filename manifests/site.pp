@@ -151,4 +151,12 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+  
+  # Custom
+  
+  ruby_gem { 'bundler for all rubies':
+    gem           => 'bundler',
+    version       => '~> 1.0',
+    ruby_version  => '*',
+  }
 }
