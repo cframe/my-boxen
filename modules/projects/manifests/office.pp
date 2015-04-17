@@ -1,11 +1,21 @@
 class projects::office {
   $home = "/Users/${::boxen_user}"
   
+  include qt
+  include java
+  
   git::config::local { 'colin.frame@itison.com office':
     ensure => present,
     repo   => "${home}/Projects/office",
     key    => 'user.email',
     value  => 'colin.frame@itison.com'
+  }
+  
+  git::config::local { 'colin.frame@itison.com office remote origin':
+    ensure => present,
+    repo   => "${home}/Projects/office",
+    key    => 'remote.origin.url',
+    value  => 'gh-cframe_itison:itison/office'
   }
   
   mysql::db { 'core_gasket_development': }

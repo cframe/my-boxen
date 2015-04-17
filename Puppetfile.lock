@@ -126,7 +126,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-java
   specs:
-    java (1.2.0)
+    java (1.8.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-libtool
@@ -167,6 +167,11 @@ GITHUBTARBALL
   remote: boxen/puppet-property_list_key
   specs:
     property_list_key (0.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-qt
+  specs:
+    qt (1.4.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-redis
@@ -280,7 +285,7 @@ DEPENDENCIES
   imagemagick (= 1.2.1)
   induction (= 1.0.0)
   inifile (= 1.1.1)
-  java (= 1.2.0)
+  java (= 1.8.0)
   libtool (= 1.0.0)
   module_data (= 0.0.3)
   mysql (= 2.0.1)
@@ -290,6 +295,7 @@ DEPENDENCIES
   phantomjs (= 2.3.0)
   pkgconfig (= 1.0.0)
   property_list_key (= 0.1.0)
+  qt (= 1.4.0)
   redis (= 3.1.0)
   repository (= 2.3.0)
   ruby (= 8.1.7)
