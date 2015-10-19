@@ -10,6 +10,10 @@ ruby::version:
 ruby::version::alias: 
   1.9.3: 1.9.3-p484
   2.0.0: 2.0.0-p647
-  
+
+boxen::personal::homebrew_packages:
+  - wget
+  - packer
+
 boxen::personal::osx_apps:
   - slack
