@@ -57,11 +57,14 @@ class people::cframe {
   include duet
   include boxer
 
+  homebrew::tap { 'homebrew/binary': }
+  package { 'packer': }
+
   include projects::mymunros
   # include projects::bagger
   include projects::percentify
 
   include projects::office
   # include projects::itison
-  # include projects::hub
+  include projects::hub
 }

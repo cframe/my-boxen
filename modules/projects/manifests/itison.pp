@@ -15,7 +15,7 @@ class projects::itison {
   boxen::project { 'itison':
     dir           => "${home}/Projects/itison", 
     mysql         => true,
-    ruby          => '1.9.3-p484',
+    ruby          => '2.0.0-p643',
     source        => 'itison/itison'
   }
     

@@ -129,9 +129,8 @@ node default {
 
   # default ruby versions
   ruby::version { '1.9.3-p484': }
-  ruby::version { '2.0.0-p247': }
-  ruby::version { '2.0.0-p598': }
   ruby::version { '2.0.0-p643': }
+  ruby::version { '2.0.0-p647': }
   ruby::version { '2.2.1': }
   
   # ruby::version { '2.1.0': }
@@ -157,6 +156,12 @@ node default {
   ruby_gem { 'bundler for all rubies':
     gem           => 'bundler',
     version       => '~> 1.0',
+    ruby_version  => '*',
+  }
+  
+  ruby_gem { 'foreman for all rubies':
+    gem           => 'foreman',
+    version       => '~> 0.78.0',
     ruby_version  => '*',
   }
 }

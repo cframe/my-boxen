@@ -4,12 +4,12 @@ class projects::office {
   include qt
   include java
   
-  git::config::local { 'colin.frame@itison.com office':
-    ensure => present,
-    repo   => "${home}/Projects/office",
-    key    => 'user.email',
-    value  => 'colin.frame@itison.com'
-  }
+  # git::config::local { 'colin.frame@itison.com office':
+  #   ensure => present,
+  #   repo   => "${home}/Projects/office",
+  #   key    => 'user.email',
+  #   value  => 'colin.frame@itison.com'
+  # }
   
   git::config::local { 'colin.frame@itison.com office remote origin':
     ensure => present,
@@ -27,7 +27,7 @@ class projects::office {
     dir           => "${home}/Projects/office", 
     mysql         => true,
     redis         => true,
-    ruby          => '2.0.0-p598',
+    ruby          => '2.0.0-p647',
     source        => 'itison/office'
   }
   
