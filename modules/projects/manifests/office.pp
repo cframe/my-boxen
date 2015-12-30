@@ -27,7 +27,7 @@ class projects::office {
     dir           => "${home}/Projects/office", 
     mysql         => true,
     redis         => true,
-    ruby          => '2.0.0-p647',
+    ruby          => '2.0.0-p648',
     source        => 'itison/office'
   }
   

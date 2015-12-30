@@ -22,7 +22,7 @@ class projects::itison {
   boxen::project { 'itison':
     dir           => "${home}/Projects/itison", 
     mysql         => true,
-    ruby          => '2.0.0-p643',
+    ruby          => '2.0.0-p648',
     source        => 'itison/itison'
   }
     

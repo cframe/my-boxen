@@ -1,15 +1,14 @@
 ---
-ruby::build::ensure: 'v20150818'
+ruby::build::ensure: 'v20151230'
 
 ruby::version:
   - 1.9.3-p484
-  - 2.0.0-p643
-  - 2.0.0-p647
+  - 2.0.0-p648
   - 2.2.1
   
 ruby::version::alias: 
   1.9.3: 1.9.3-p484
-  2.0.0: 2.0.0-p647
+  2.0.0: 2.0.0-p648
 
 boxen::personal::homebrew_packages:
   - wget
@@ -17,3 +16,6 @@ boxen::personal::homebrew_packages:
 
 boxen::personal::osx_apps:
   - slack
+  - skitch
+  - xld
+  - aerial
