@@ -65,12 +65,12 @@ class osx::dock::align_left {
 
 class osx::dock::top_right_hot_corner_screensaver {
   include osx::dock
-  
+
   boxen::osx_defaults { 'Set the top right hot corner to activate the screensaver':
     user   => $::boxen_user,
     key    => 'wvous-tr-corner',
     domain => 'com.apple.dock',
-    type   => 'int', 
+    type   => 'int',
     value  => 5,
     notify => Exec['killall Dock'];
   }
@@ -78,7 +78,7 @@ class osx::dock::top_right_hot_corner_screensaver {
 
 class osx::dock::top_right_hot_corner_screensaver_modifier {
   include osx::dock
-  
+
   boxen::osx_defaults { 'Set the top right hot corner to activate the screensaver':
     user   => $::boxen_user,
     key    => 'wvous-tr-modifier',
@@ -128,10 +128,9 @@ node default {
   # nodejs::version { 'v0.10': }
 
   # default ruby versions
-  ruby::version { '1.9.3-p484': }
-  ruby::version { '2.0.0-p648': }
-  ruby::version { '2.2.1': }
-  
+  ruby::version { '2.2.4': }
+  ruby::version { '2.3.0': }
+
   # ruby::version { '2.1.0': }
   # ruby::version { '2.1.1': }
   # ruby::version { '2.1.2': }
@@ -149,18 +148,24 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
-  
+
   # Custom
-  
+
   ruby_gem { 'bundler for all rubies':
     gem           => 'bundler',
     version       => '~> 1.0',
     ruby_version  => '*',
   }
-  
+
   ruby_gem { 'foreman for all rubies':
     gem           => 'foreman',
     version       => '~> 0.78.0',
+    ruby_version  => '*',
+  }
+
+  ruby_gem { 'subcontractor for all rubies':
+    gem           => 'subcontractor',
+    version       => '~> 0.8.0',
     ruby_version  => '*',
   }
 }

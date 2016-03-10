@@ -22,7 +22,7 @@ class projects::hub {
     dir           => "${home}/Projects/hub", 
     mysql         => true,
     redis         => true,
-    ruby          => '2.0.0-p648',
+    ruby          => '2.2.4',
     source        => 'itison/hub'
   }
   
